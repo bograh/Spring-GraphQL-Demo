@@ -23,6 +23,14 @@ public class PostDB implements PostRepository {
 
     @Override
     public Post findById(int id) {
-        return null;
+        return postsDB.stream()
+                .filter(post -> post.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public int size() {
+        return postsDB.size();
     }
 }

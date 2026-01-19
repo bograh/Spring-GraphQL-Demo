@@ -12,4 +12,7 @@ public interface UserRepository {
     List<User> findAll();
 
     User findById(int id);
+
+    int size();
+
 }

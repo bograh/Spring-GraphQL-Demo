@@ -11,4 +11,6 @@ public interface PostRepository {
     List<Post> findAll();
 
     Post findById(int id);
+
+    int size();
 }

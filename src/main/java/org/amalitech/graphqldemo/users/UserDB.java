@@ -23,6 +23,14 @@ public class UserDB implements UserRepository {
 
     @Override
     public User findById(int id) {
-        return null;
+        return usersDB.stream()
+                .filter(user -> user.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public int size() {
+        return usersDB.size();
     }
 }
